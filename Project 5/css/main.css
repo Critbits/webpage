@@ -1,0 +1,259 @@
+/*
+
+Project: Personal Web 
+Name: Christian Fellows
+Submitted: 04/18/2025
+ 
+
+
+*\
+
+/* 
+main.css
+Added styles for the visitor form, including layout, validation, and success messages.
+Introduced new classes like .flex, .is-invalid, and .was-validated.
+*/
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to bottom, #f4f1ea, #d8d3c9);
+  color: #333;
+}
+
+/* Disclaimer Styling */
+.disclaimer {
+  background: #f8d7da;
+  color: #721c24;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid #f5c6cb;
+  font-size: 0.9em;
+}
+
+/* Container Layout */
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background: #8c4a2f;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+aside {
+  grid-area: aside;
+  background: #f4f1ea;
+  padding: 10px;
+  border-right: 2px solid #ccc;
+}
+
+main {
+  grid-area: main;
+  padding: 20px;
+}
+
+footer {
+  grid-area: footer;
+  background: #8c4a2f;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Menu Styling */
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.menu li a:hover {
+  background: #8c4a2f;
+  color: white;
+}
+
+/* Home Page Image Styling */
+#home img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container width */
+  width: 300px; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the image */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "main"
+      "aside"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
+  }
+  #about {
+    padding: 1rem;
+  }
+  #about h2 {
+    font-size: 1.5rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  #about img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Visitor Form Styling */
+#visitor-form {
+  max-width: 600px; /* Limits the form width */
+  margin: 2rem auto; /* Centers the form with spacing */
+  padding: 1rem; /* Adds padding inside the form */
+  background: #fff; /* White background for the form */
+  border-radius: 5px; /* Rounds the form corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
+}
+/* Flexbox for form layout */
+.flex {
+  display: flex; /* Enables flexbox layout */
+  flex-wrap: wrap; /* Allows wrapping if items exceed container width */
+  gap: 1rem; /* Adds spacing between items */
+}
+
+.flex li {
+  flex: 1 1 45%; /* Items take 45% of container width */
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Input and Textarea Styling */
+input, textarea {
+  width: 100%; /* Full width for input fields */
+  padding: 0.5rem; /* Padding inside input fields */
+  border: 1px solid #ccc; /* Border around input fields */
+  border-radius: 5px; /* Rounded corners for inputs */
+}
+/* Validation Styling */
+.is-invalid {
+  border: 2px solid red; /* Red border for invalid fields */
+}
+.errorMsg {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.was-validated {
+  border: 2px solid green; /* Green border for valid fields */
+}
+input:not(.was-validated):invalid {
+  border: 2px solid red; /* Red border for invalid fields */
+}
+
+.email-input {
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+
+#success {
+  display: none; /* Initially hidden */
+  visibility: visible; /* Ensure it becomes visible */
+  opacity: 1; /* Ensure it’s fully opaque */
+  background-color: #e0ffe0; /* Light green background for visibility */
+  color: #333; /* Dark text color */
+  padding: 20px; /* Padding inside the message */
+  margin-top: 20px; /* Adds spacing above the message */
+  border: 1px solid #4caf50; /* Green border */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Centers the text */
+  font-size: 1.2em; /* Larger font size */
+}
+/* General Styling for About Section */
+#about {
+  padding: 2rem;
+}
+
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#about p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+#about img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+

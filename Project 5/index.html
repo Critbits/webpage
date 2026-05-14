@@ -1,0 +1,227 @@
+<!-----------------------------------------------------------------------------------
+
+Project: Project 5-Personal Web Site-Visitor Form Validation-Refactor JS
+Name: Christian Fellows
+Submitted: 04/18/2025
+ 
+I declare that the following source code was written by me, or provided
+by the instructor for this project. I understand that copying source
+code from any other source, providing source code to another student, 
+or leaving my code on a public web site constitutes cheating.
+I acknowledge that  If I am found in violation of this policy this may result
+in a zero grade, a permanent record on file and possibly immediate failure of the class.
+
+-------------------------------------------------------------------------------------
+
+Working on this project was an incredibly rewarding experience, particularly because 
+of the changes implemented and the lessons they carried. One of the most enjoyable 
+aspects was enhancing the visitor form functionality and styling. Adding validation
+logic using regex patterns and creating a user-friendly form taught me the importance
+of clean, intuitive user experiences. Designing the form with responsive layouts,
+clear error messages, and a success feedback system reinforced the principle of 
+accessibility and usability in web design. These changes not only made the form 
+visually appealing but also ensured that it functioned seamlessly across different
+devices and browsers, demonstrating the value of cross-platform compatibility. 
+It was satisfying to see how small adjustments, like adding a subtle shadow or 
+a success message, could significantly improve the overall user experience. 
+
+Another aspect I thoroughly enjoyed was implementing the responsive design 
+principles throughout the project. Adjusting layouts for various screen sizes, 
+such as reformatting the grid structure and ensuring images and iframes scaled 
+appropriately, taught me how to think critically about mobile-first design. 
+I learned how to prioritize content hierarchy and adapt elements to fit the 
+needs of users on smaller screens without sacrificing functionality or aesthetics.
+Additionally, the process of organizing and documenting these changes with inline 
+comments helped me appreciate the importance of maintainable and well-documented code,
+which is essential for collaboration and future scalability. Overall, this project not
+only strengthened my technical skills but also deepened my understanding of 
+user-centered design and the impact of thoughtful, purposeful changes.
+
+----------------------------------------------------------------------------------->
+
+
+<!---
+Added a new #visitor-form section with fields for first name, last name, email, and phone.
+Included error messages and a success message.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orangutans - Guardians of the Rainforest</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Disclaimer Header -->
+    <div class="disclaimer">
+      <p>Disclaimer: This website is a project and not affiliated with any official organization.</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <img src="img/Orangutanlogo.png" alt="Orangutan Logo" class="logo">
+      <h1 class="animate__animated animate__fadeInDown">Orangutans: Guardians of the Rainforest</h1>
+    </header>
+
+    <!-- Menu (Aside) -->
+    <aside>
+      <nav>
+        <ul class="menu">
+          <li><a href="#" onclick="showSection('home')">Home</a></li>
+          <li><a href="#" onclick="showSection('about')">About Orangutans</a></li>
+          <li><a href="#" onclick="showSection('conservation')">Conservation Efforts</a></li>
+          <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+          <li><a href="#" onclick="showSection('visitor-form')">Visitor Form</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Home Section -->
+      <section id="home">
+        <h2>Welcome to the World of Orangutans</h2>
+        <p class="animate__animated animate__fadeIn">Discover the incredible lives of orangutans and their role in the rainforest ecosystem.</p>
+        <figure>
+          <picture>
+            <source media="(max-width: 768px)" srcset="img/orangutan-small.jpg">
+            <source media="(min-width: 769px)" srcset="img/orangutan-large.jpg">
+            <img src="img/orangutan.jpg" alt="Orangutan eating fruit">
+          </picture>
+          <figcaption>Orangutans: The gentle giants of the rainforest.</figcaption>
+        </figure>
+      </section>
+
+      <!-- About Orangutans Section -->
+      <section id="about" style="display: none;">
+        <h2>About Orangutans</h2>
+        <p>Orangutans are highly intelligent primates found in the rainforests of Borneo and Sumatra. They are known for their reddish fur, long arms, and remarkable problem-solving skills. Orangutans spend most of their time in trees, making them excellent climbers.</p>
+        <figure>
+          <img src="img/orangutan2.jpg" alt="Orangutan hanging from a branch">
+          <figcaption>An orangutan hanging gracefully from a tree branch.</figcaption>
+        </figure>
+        <p>Orangutans are solitary creatures, with males often living alone, while females stay with their offspring. They are known for their incredible intelligence, using tools to gather food and building elaborate nests in trees to sleep at night.</p>
+        <p>Their diet consists mainly of fruit, but they also eat leaves, bark, and insects. Orangutans are vital to the ecosystem as they help disperse seeds throughout the rainforest.</p>
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/0fts6x_EE_E" 
+                  title="A Rare Look at the Secret Life of Orangutans" 
+                  frameborder="0" allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <!-- Conservation Efforts Section -->
+      <section id="conservation" style="display: none;">
+        <h2>Conservation Efforts</h2>
+        <p>Orangutans are critically endangered due to deforestation, palm oil plantations, and illegal wildlife trade. Conservation efforts focus on protecting their habitats and educating the public about their plight.</p>
+        <p>Organizations around the world are working tirelessly to save orangutans by establishing protected areas, rehabilitating orphaned orangutans, and campaigning against deforestation. Efforts include reforestation projects, wildlife corridors, and enforcing laws against illegal logging and hunting.</p>
+        <p>How you can help:</p>
+        <ul>
+          <li>Support organizations like the <a href="https://www.worldwildlife.org" target="_blank">World Wildlife Fund</a>, <a href="https://redapes.org" target="_blank">Orangutan Foundation International</a>, and the <a href="https://www.orangutans-sos.org" target="_blank">Sumatran Orangutan Society</a>.</li>
+          <li>Choose products that are certified as sustainable and free of unsustainable palm oil.</li>
+          <li>Spread awareness about the plight of orangutans and their importance to the rainforest ecosystem.</li>
+        </ul>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" style="display: none;">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to get involved? Reach out to us!</p>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="contact-email">Email:</label>
+          <input type="text" id="contact-email" name="email" required>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <!-- Visitor Form Section -->
+      <section id="visitor-form" style="display: none;">
+        <h2>Visitor Form</h2>
+        <div id="success" class="successMsg" style="display:none">
+          Thank you for logging your visit!
+        </div>
+        <form id="myform" novalidate>
+          <ul class="flex">
+            <li>
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name" placeholder="Enter your first name">
+              <div class="errorMsg"></div>
+            </li>
+            <li>
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Enter your last name">
+              <div class="errorMsg"></div>
+            </li>
+            <li>
+              <label for="visitor-email">Email</label>
+              <input type="text" id="visitor-email" name="email" placeholder="Enter your email">
+              <div class="errorMsg"></div>
+            </li>
+            <li>
+              <label for="phone">Phone</label>
+              <input type="text" id="phone" name="phone" placeholder="Enter your phone">
+              <div class="errorMsg"></div>
+            </li>
+            <li>
+              <label for="state">State</label>
+              <input type="text" id="state" name="state" placeholder="Enter your state">
+              <div class="errorMsg"></div>
+            </li>
+            <li>
+              <label for="zip">Zip Code</label>
+              <input type="text" id="zip" name="zip" placeholder="Enter your zip code">
+              <div class="errorMsg"></div>
+            </li>
+            <li>
+              <label>How did you find my page?</label>
+              <div>
+                <input type="checkbox" id="internet" name="find-page" value="Internet">
+                <label for="internet">Internet</label>
+              </div>
+              <div>
+                <input type="checkbox" id="friend" name="find-page" value="Friend">
+                <label for="friend">Friend</label>
+              </div>
+              <div>
+                <input type="checkbox" id="google" name="find-page" value="Google">
+                <label for="google">Google</label>
+              </div>
+              <div class="errorMsg" data-group="find-page"></div> <!-- Error message container -->
+            </li>
+            <li>
+              <label for="comment">Comments</label>
+              <textarea id="comment" name="comment" placeholder="Enter your comments"></textarea>
+            </li>
+          </ul>
+          <button type="submit" id="submitBtn">Submit</button>
+        </form>
+        <div id="success" style="display: none;">Form submitted successfully!</div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2023 Orangutans - Guardians of the Rainforest. All rights reserved.</p>
+      <p>Follow us: <i class="fab fa-facebook"></i> <i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i></p>
+      <!-- Theme Toggle Button -->
+      <button id="theme-toggle">Toggle Theme</button>
+    </footer>
+  </div>
+
+  <script src="js/validation.js"></script>
+  <script src="js/page.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

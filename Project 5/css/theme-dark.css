@@ -1,0 +1,103 @@
+/*
+
+Project: Project 5-Personal Web Site-Visitor Form Validation-Refactor JS
+Name: Christian Fellows
+Submitted: 04/18/2025
+ 
+I declare that the following source code was written by me, or provided
+by the instructor for this project. I understand that copying source
+code from any other source, providing source code to another student, 
+or leaving my code on a public web site constitutes cheating.
+I acknowledge that  If I am found in violation of this policy this may result
+in a zero grade, a permanent record on file and possibly immediate failure of the class.
+
+-------------------------------------------------------------------------------------
+
+Working on this project was an incredibly rewarding experience, particularly because 
+of the changes implemented and the lessons they carried. One of the most enjoyable 
+aspects was enhancing the visitor form functionality and styling. Adding validation
+logic using regex patterns and creating a user-friendly form taught me the importance
+of clean, intuitive user experiences. Designing the form with responsive layouts,
+clear error messages, and a success feedback system reinforced the principle of 
+accessibility and usability in web design. These changes not only made the form 
+visually appealing but also ensured that it functioned seamlessly across different
+devices and browsers, demonstrating the value of cross-platform compatibility. 
+It was satisfying to see how small adjustments, like adding a subtle shadow or 
+a success message, could significantly improve the overall user experience. 
+
+Another aspect I thoroughly enjoyed was implementing the responsive design 
+principles throughout the project. Adjusting layouts for various screen sizes, 
+such as reformatting the grid structure and ensuring images and iframes scaled 
+appropriately, taught me how to think critically about mobile-first design. 
+I learned how to prioritize content hierarchy and adapt elements to fit the 
+needs of users on smaller screens without sacrificing functionality or aesthetics.
+Additionally, the process of organizing and documenting these changes with inline 
+comments helped me appreciate the importance of maintainable and well-documented code,
+which is essential for collaboration and future scalability. Overall, this project not
+only strengthened my technical skills but also deepened my understanding of 
+user-centered design and the impact of thoughtful, purposeful changes.
+
+*\
+
+/* 
+theme-dark.css
+Changes Made:
+1. Changed the grid layout to move the menu to the right.
+2. Changed colors to a darker theme.
+3. Updated fonts to Roboto.
+4. Added a subtle background texture.
+5. Modified animations for a different fade direction.
+*/
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
+    color: #e0e0e0;
+  }
+  
+  /* Disclaimer Styling */
+  .disclaimer {
+    background: #333;
+    color: #fff;
+    border-bottom: 2px solid #555;
+  }
+  
+  /* Container Layout */
+  .container {
+    grid-template-areas:
+      "header header"
+      "main aside"
+      "footer footer";
+    grid-template-columns: 3fr 1fr;
+  }
+  
+  /* Header Styling */
+  header {
+    background: #444;
+  }
+  
+  /* Menu Styling */
+  aside {
+    background: #222;
+  }
+  
+  .menu li a {
+    color: #e0e0e0;
+    border-color: #444;
+  }
+  
+  .menu li a:hover {
+    background: #555;
+    color: white;
+  }
+  
+  /* Footer Styling */
+  footer {
+    background: #333;
+  }
+  
+  /* Animations */
+  .animate__fadeIn {
+    animation-name: fadeInRight;
+  }
